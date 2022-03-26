@@ -1,0 +1,141 @@
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+@import url("https://fonts.googleapis.com/css?family=Monoton:regular&display=swap");
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	font-family: Monoton, "Helvetica Neue", Helvetica, sans-serif;
+	background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(14, 14, 12, 0.19371498599439774) 100%);
+}
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+/* ------------------------------ */
+
+/*
+CSS – переходы либо CSS – transitions могут применяться ко всем элементам и даже к псевдоэлементам. Используются для оживления нашей верстки. Что в свою очередь приводит к улучшению взаимодействия с пользователем, как правило путем приятной анимированной реакции на его действия. Например – наведение и нажатие на кнопку. Также свойства transition можно использовать для построения несложных сценариев анимации. Фактически, CSS – переходы обеспечивают смену значений других свойств с определенной анимацей и сценарием. Всю эту магию можно описать универсальным CSS свойcтвом transition, либо рядом следующих отдельных свойств: 
+*/
+@keyframes lg {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: calc(100% - 600px);
+	}
+}
+@keyframes rg {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: calc(100vh - 260px);
+	}
+}
+
+.dvd {
+	width: 600px;
+	height: 260px;
+	display: flex;
+	transform-style: preserve-3d;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+	border-radius: 50%/50%;
+	text-align: center;
+	perspective: 1000px;
+	animation: lg 20s linear 0s infinite alternate, rg 5s linear 0s infinite alternate;
+}
+.dvd__text {
+	font-size: 100px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.dvd__krug {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+.dvd__krug::before {
+	content: "";
+	width: 150px;
+	position: absolute;
+	height: 70px;
+	border-radius: 50%/50%;
+	/*perspective: 400px;*/
+	transform: rotateX(45deg);
+	background-color: rgba(25, 27, 27, 0.383);
+}
+.dvd__dr {
+	width: 30px;
+	border-radius: 50%;
+	transform: rotateX(45deg);
+	background-color: aliceblue;
+	height: 20px;
+}
+
+@keyframes lg1 {
+	0% {
+		right: 0;
+	}
+	100% {
+		right: calc(100% - 600px);
+	}
+}
+@keyframes rg2 {
+	0% {
+		bottom: 0;
+	}
+	100% {
+		top: calc(100vh - 260px);
+	}
+}
+.dvd_1 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(238, 253, 45, 0.8267682072829132) 100%);
+	animation: lg1 16s linear 0s infinite alternate, rg2 3s linear 0s infinite alternate;
+}
